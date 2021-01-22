@@ -48,7 +48,7 @@ class App extends Component{
           <br></br>
           <form method="POST" onSubmit={this.submitHandler}>
               <div className="form-group">
-                  <input type="text" name="name" class="form-control" placeholder="name" onChange={(event)=>{
+                  <input type="text" name="username" class="form-control" placeholder="username" onChange={(event)=>{
                       this.setState({
                           username:event.target.value
                       });
