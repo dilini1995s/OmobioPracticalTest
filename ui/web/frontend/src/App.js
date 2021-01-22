@@ -46,7 +46,7 @@ class App extends Component{
             <h3>Login form</h3>
           </nav>
           <br></br>
-              <form method="POST" onSubmit={this.submitHandler}>
+          <form method="POST" onSubmit={this.submitHandler}>
               <div className="form-group">
                   <input type="text" name="name" class="form-control" placeholder="name" onChange={(event)=>{
                       this.setState({
@@ -64,10 +64,11 @@ class App extends Component{
               </div><br></br><br></br>
 
                   <input type="submit" value="Login" className="btn btn-dark btn-lg btn-block" name="submit" />
-              </form>
+            </form>
               <a href="/user" className="navbar-brand">
                 UserList
               </a>
+              
         <div className="container mt-3">
         <BrowserRouter>
           <Switch>
