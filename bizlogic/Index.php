@@ -9,6 +9,7 @@ header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
 require('connect.php');
 mysqli_select_db($conn,'loginDB');
 
+if(isset($_POST['submit'])){
     $name=json_encode($_POST['username']);
     $password=json_encode($_POST['password']);
     $qu="select * from user where username='$name' and $password='$password'";
@@ -20,12 +21,9 @@ mysqli_select_db($conn,'loginDB');
         echo "username and password are correct";
     }
 
+}
+    
 
-    $trp = mysqli_query($conn, "SELECT * from user");
-    $rows = array();
-    while($r = mysqli_fetch_assoc($trp)) {
-     $rows[] = $r;
-    }
-    print json_encode($rows);
+
 
 ?>

@@ -3,13 +3,18 @@ import axios from 'axios';
 
 class userList extends React.Component {
 
+    constructor(props) {
+        super(props)
+          this.state = {
+            data: []
+            }
+        }
       componentDidMount(){
         //get request
-        axios.get('http://localhost/Practical_test/index.php').then(res => 
+        axios.get('http://localhost:80/Practical_test/userlist.php').then(res => 
         {
-        
         this.setState({data: res.data});
-           }); 
+        }); 
         
         }
     
@@ -19,7 +24,6 @@ class userList extends React.Component {
     return (
      
       <div className="maincontainer">
-       
         <h1 className="mr-5 ml-5 mt-5">User List</h1>
         <div className="container mb-5 mt-5 text-left">
         
@@ -42,15 +46,12 @@ class userList extends React.Component {
                   <td>{result.username}</td>
                   <td>{result.email}</td>  
                 </tr>
-             
             )
           })}
            
           </tbody>
         </table>
-            
       </div>
-     
       </div>
      
     )

@@ -2,8 +2,9 @@ import React,  {Component} from "react";
 import './App.css';
 import Axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, BrowserRouter,Route, Link } from "react-router-dom";
 import userList from "./userList";
+
 class App extends Component{
   constructor(props){
       super(props);
@@ -52,31 +53,30 @@ class App extends Component{
                           username:event.target.value
                       });
                   }} value={this.state.username} />
-                  </div>
+              </div>
                   <br></br><br></br>
-                  <div className="form-group">
+              <div className="form-group">
                   <input type="text" name="password" class="form-control" placeholder="password" onChange={(event)=>{
                       this.setState({
                         password:event.target.value
                       });
                   }} value={this.state.password} />
-                  </div><br></br><br></br>
+              </div><br></br><br></br>
+
                   <input type="submit" value="Login" className="btn btn-dark btn-lg btn-block" name="submit" />
               </form>
-            <div className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link to={"/userlist"} className="nav-link">
-                  UserList
-                </Link> 
-               </li> 
-            </div>
+              <a href="/user" className="navbar-brand">
+                UserList
+              </a>
         <div className="container mt-3">
+        <BrowserRouter>
           <Switch>
-            <Route exact path="/userlist" component={userList} />
+            <Route exact path="/user" component={userList} />
           </Switch>
+          </BrowserRouter>
         </div>
 
-          </div>
+        </div>
       );
   }
 
