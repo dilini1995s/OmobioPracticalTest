@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Ca
 header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
 
 require('connect.php');
-mysqli_select_db($conn,'loginDB');
+mysqli_select_db($conn,'Exam');
 
 //if(isset($_POST['submit'])){
     echo "received data";
