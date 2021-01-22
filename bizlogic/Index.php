@@ -13,10 +13,10 @@ mysqli_select_db($conn,'loginDB');
     echo "received data";
     echo file_get_contents('php://input');
     echo json_decode(file_get_contents('php://input'), true);
-    
+
     $name=json_encode($_POST['username']);
     $password=json_encode($_POST['password']);
-    $qu="select * from user where username='$name' and $password='$password'";
+    $qu="select * from user where username='$name' and password='$password'";
 
     $ex=mysqli_query($conn,$qu);
     $ge=mysqli_fetch_assoc($ex);
