@@ -14,8 +14,8 @@ mysqli_select_db($conn,'loginDB');
     echo file_get_contents('php://input');
     echo json_decode(file_get_contents('php://input'), true);
 
-    $name=json_encode($_POST['dat1']);
-    $password=json_encode($_POST['dat2']);
+    $name=json_encode($_POST['username']);
+    $password=json_encode($_POST['password']);
     $qu="select * from user where username='$name' and password='$password'";
 
     $ex=mysqli_query($conn,$qu);
